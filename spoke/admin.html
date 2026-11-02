@@ -1,0 +1,37 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Spoke</title>
+<link rel="stylesheet" href="/admin.css"></head><body>
+<header>
+ <h1><svg width="30" height="22" viewBox="0 0 30 22" fill="none" stroke="#f2c200" stroke-width="2"><circle cx="6" cy="15" r="5"/><circle cx="24" cy="15" r="5"/><path d="M6 15l6-9h8l4 9M12 6l5 9h-11M10 3h4"/></svg>Spoke</h1>
+ <nav><button data-view="compose">New post</button><button data-view="posts">Your posts</button></nav>
+ <a class="btn" href="/site/" target="_blank">View site</a><button id="gear">Settings</button>
+</header>
+<main>
+ <section id="v-compose" class="composer">
+  <div class="tabs"><button data-t="text">Text</button><button data-t="image">Photos</button><button data-t="video">Video</button></div>
+  <input id="title" placeholder="Title (optional)">
+  <div id="photo" hidden><div class="drop" id="drop">Drop photos here or click to choose. Add several for a gallery; drag to reorder. The first is the cover.</div>
+   <input type="file" id="file" accept="image/*" multiple hidden><div class="thumbs" id="thumbs"></div></div>
+  <div id="video" hidden><textarea class="code" id="embed" aria-label="Video link or embed code" placeholder="Paste a YouTube or Vimeo link, or your own &lt;iframe&gt; code!"></textarea></div>
+  <textarea id="body"></textarea>
+  <input id="tags" placeholder="Tags, separated by commas">
+  <div id="slugrow" hidden><label for="slug">Post URL</label>
+   <div class="slug"><span>/post/</span><input id="slug" autocomplete="off" spellcheck="false"><span>/</span></div>
+   <small>Changing this changes the post's address, so old links to it will stop working.</small></div>
+  <div class="row"><button id="cancel" hidden>Cancel</button><button class="go" id="post">Post</button></div>
+ </section>
+ <section id="v-posts" class="list" hidden>
+  <div class="head"><h2>Your posts</h2><small id="count"></small></div>
+  <div id="posts"></div>
+  <div class="pager" id="pager" hidden><button id="newer">‹ Newer</button><small id="pageinfo"></small><button id="older">Older ›</button></div>
+ </section>
+</main>
+<footer class="ver">Spoke v<span id="ver"></span></footer>
+<dialog id="dlg"><h3>Settings</h3>
+ <label>Site title</label><input id="c_title"><label>Description</label><input id="c_description">
+ <label>Author</label><input id="c_author"><label>Posts per page</label><input id="c_posts_per_page" type="number" min="1">
+ <label>Site address (for the RSS feed, e.g. https://me.github.io/blog)</label><input id="c_base_url">
+ <label>Theme</label><select id="c_theme"></select>
+ <div class="row"><button id="c_close">Cancel</button><button class="go" id="c_save">Save settings</button></div></dialog>
+<div id="toast"></div>
+<script src="/admin.js"></script>
+</body></html>

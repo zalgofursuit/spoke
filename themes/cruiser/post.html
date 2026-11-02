@@ -1,0 +1,3 @@
+{% extends "layout.html" %}
+{% block title %}{{ post.title or post.date_pretty }} · {{ site.title }}{% endblock %}
+{% block content %}{% include "_post.html" %}{% endblock %}

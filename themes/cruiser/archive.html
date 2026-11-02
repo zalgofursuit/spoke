@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block title %}Archive · {{ site.title }}{% endblock %}
+{% block content %}
+<h2 class="heading">Archive</h2>
+{% for m in months %}
+<section class="month"><h3>{{ m.label }}</h3>
+  <div class="tiles">
+  {% for post in m.posts %}
+    <a class="tile type-{{ post.type }}" href="{{ root }}/{{ post.path }}" title="{{ post.title or post.excerpt }}">
+      {% if post.cover %}<img src="{{ root }}/{{ post.cover }}" alt="" loading="lazy">{% if post.images|length > 1 %}<span class="badge">{{ post.images|length }}</span>{% endif %}
+      {% else %}<span class="tile-label">{% if post.type == 'video' %}<span class="sym">🎥</span>{% endif %}<span class="txt">{{ post.title or post.excerpt }}</span></span>{% endif %}
+    </a>
+  {% endfor %}
+  </div>
+</section>
+{% else %}<p>Nothing here yet.</p>{% endfor %}
+{% endblock %}

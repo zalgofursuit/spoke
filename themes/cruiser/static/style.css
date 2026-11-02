@@ -1,0 +1,29 @@
+:root{--bg:#e9eeee;--panel:#fff;--ink:#1c2a2e;--mute:#6b7b80;--green:#12372a;--hi:#f2c200;--line:#d3dcdc}
+@media(prefers-color-scheme:dark){:root{--bg:#0f1c19;--panel:#17282a;--ink:#e6eeee;--mute:#8da0a2;--green:#f2c200;--line:#27403f}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 "Avenir Next","Segoe UI",system-ui,sans-serif}
+a{color:inherit}
+.masthead{background:#12372a;color:#fff;padding:2rem 1rem;text-align:center;border-bottom:6px solid var(--hi)}
+.masthead a{text-decoration:none}.masthead h1{margin:0;font-size:2rem;letter-spacing:-.02em}.masthead p{margin:.2rem 0 0;color:#b9cfc8}
+main{max-width:620px;margin:1.5rem auto;padding:0 1rem}
+.heading{font-size:1.1rem;color:var(--mute)}
+.post{background:var(--panel);border:1px solid var(--line);border-radius:6px;margin-bottom:1.5rem;overflow:hidden}
+.post h2{margin:0;padding:1rem 1.2rem 0;font-size:1.4rem;line-height:1.25}.post h2 a{text-decoration:none}
+.body{padding:.6rem 1.2rem}.body a{color:var(--green);text-decoration-color:var(--hi);text-underline-offset:3px}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-top:1rem}.gallery.single{grid-template-columns:1fr}
+.gallery img{width:100%;height:100%;display:block;object-fit:cover}.gallery:not(.single) img{aspect-ratio:1}
+.video{margin-top:1rem;background:#000;max-width:100%}.video iframe{width:100%;height:100%;border:0;display:block}
+.embed{margin-top:1rem;padding:0 1.2rem;overflow:hidden}.embed iframe{width:100%;max-width:100%;border:0}
+.nav{margin-top:.8rem}.nav a{color:#fff;margin:0 .6rem;text-decoration-color:var(--hi);text-underline-offset:4px}
+.month h3{margin:1.6rem 0 .5rem;font-size:1.05rem}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:4px}
+.tile{position:relative;aspect-ratio:1;display:block;background:var(--panel);border:1px solid var(--line);overflow:hidden;text-decoration:none}
+.tile img{width:100%;height:100%;object-fit:cover;display:block}
+.tile-label{position:absolute;inset:0;padding:.7rem;display:flex;flex-direction:column;gap:.4rem;overflow:hidden;font-size:.9rem;line-height:1.3;font-weight:600;color:var(--ink)}
+.tile-label .sym{font-size:1.7rem;line-height:1}
+.tile-label .txt{display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
+.badge{position:absolute;right:5px;top:5px;background:#12372acc;color:#fff;border-radius:3px;font-size:.75rem;padding:0 .4rem}
+.tile:hover,.tile:focus-visible{outline:3px solid var(--hi);outline-offset:-3px}
+.meta{padding:.2rem 1.2rem 1rem;font-size:.85rem;color:var(--mute);display:flex;gap:.8rem;flex-wrap:wrap}.meta a{text-decoration:none}.meta .tag:hover{color:var(--ink)}
+.pager{display:flex;justify-content:space-between}.pager a{font-weight:700}
+.colophon{text-align:center;color:var(--mute);font-size:.85rem;padding:1rem 1rem 3rem}.tagcloud{margin-bottom:.8rem}.tagcloud a{margin:0 .3rem}

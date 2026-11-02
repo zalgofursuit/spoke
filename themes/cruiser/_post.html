@@ -1,0 +1,16 @@
+<article class="post post-{{ post.type }}">
+  {% if post.title %}<h2><a href="{{ root }}/{{ post.path }}">{{ post.title }}</a></h2>{% endif %}
+  {% if post.type == 'image' %}
+    <div class="gallery{% if post.images|length == 1 %} single{% endif %}">
+      {% for img in post.images %}<a href="{{ root }}/media/{{ img.file }}"><img src="{{ root }}/media/{{ img.file }}" loading="lazy" alt=""></a>{% endfor %}
+    </div>
+  {% elif post.type == 'video' %}
+    {% if post.embed_ratio %}<div class="video" style="aspect-ratio: {{ post.embed_ratio }}">{{ post.embed_html|safe }}</div>
+    {% else %}<div class="embed">{{ post.embed_html|safe }}</div>{% endif %}
+  {% endif %}
+  {% if post.body %}<div class="body">{{ post.body|fmt }}</div>{% endif %}
+  <footer class="meta">
+    <a href="{{ root }}/{{ post.path }}">{{ post.date_pretty }}</a>
+    {% for t in post.tag_list %}<a class="tag" href="{{ root }}/{{ t.path }}">#{{ t.name }}</a>{% endfor %}
+  </footer>
+</article>
