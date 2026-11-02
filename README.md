@@ -1,6 +1,9 @@
-# Spoke: blog your ride
+# Spoke
 
 A tiny static site generator with a social-media-style posting GUI. Text, photo galleries, and video embeds, rendered through Jinja2 themes.
+
+## AI Disclaimer
+Yes, this thing was written by Claude. I didn't see anyone else making the tool I specifically wanted. If someone wants to de-sloppify it, I'll be happy to quit prompting and use yours!
 
 ## Run it
 1. Install Python 3.9+ (python.org). Jinja2 and Pillow (for thumbnails) install themselves on first run.
